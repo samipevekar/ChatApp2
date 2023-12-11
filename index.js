@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: "https://samipevekar.github.io/ChatApp2/", // Replace with your client origin
+    origin: "http://127.0.0.1:3000", // Replace with your client origin
     methods: ["GET", "POST"]
   }
 });

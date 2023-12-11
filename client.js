@@ -1,4 +1,4 @@
-const socket = io("https://ichat-in.onrender.com");
+const socket = io("http://localhost:3000");
 
         // Get DOM elements in respective js variables
 
