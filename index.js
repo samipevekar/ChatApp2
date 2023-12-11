@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: "http://127.0.0.1:3000", // Replace with your client origin
+    origin: "https://samipevekar.github.io/ChatApp2/", // Replace with your client origin
     methods: ["GET", "POST"]
   }
 });
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   res.send('Socket.io server is running.');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
