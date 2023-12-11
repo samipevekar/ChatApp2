@@ -1,0 +1,108 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: radial-gradient(white ,rgb(145, 1, 189))no-repeat center center/cover;
+    height: 100vh;
+}
+.logo{
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    filter: contrast(3);
+
+    
+}
+h1{
+    margin: 10px 0px;
+    margin-top: 0px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgb(255, 251, 251);
+    filter: drop-shadow(1px 1px 10px rgb(145, 1, 189));
+}
+
+.container{
+    max-width: 890px;
+    background: url();
+    box-shadow: .1px .1px 3px black;
+    border-radius: 10px;
+    margin: auto;
+    height: 60vh;
+    padding: 30px;
+    margin-bottom: 23px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.297);
+
+}
+.container::-webkit-scrollbar{
+    width: 0px;
+}
+.message{
+    background-color: rgb(236, 236, 236);
+    width: fit-content;
+    padding: 10px;
+    margin: 17px 10px;
+    box-shadow: .1px .1px 2px black;
+    border-radius: 10px;
+    font-size: 16px;
+    word-break: break-all;
+}
+.left{
+    float: left;
+    clear: both;
+}
+.right{
+    float: right;
+    clear: both;
+}
+#send-container{
+    text-align: center;
+    max-width: 985px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+#messageInp{
+    width: 90%;
+    box-shadow: .1px .1px 2px black;
+    border: none;
+    border-radius: 50px;
+    height: 30px;
+    outline: none;
+    padding: 3px 10px;
+}
+.btn{
+    cursor: pointer;
+    box-shadow: .1px .1px 2px black;
+    border:none;
+    border-radius: 100%;
+    width: 38px;
+    height: 38px;
+    color: rgb(145, 1, 189);
+    font-size: 16px;
+}
+
+@media (max-width:640px){
+    #messageInp{
+        width: 80%;
+    }
+    .message{
+        padding: 10px;
+        width:fit-content;
+        word-break: break-all;
+    }
+    .container{
+        padding: 15px;
+    }
+
+}
+
+@media (max-width:330px){
+    #messageInp{
+        width: 70%;
+    }
+}
