@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
@@ -13,6 +14,9 @@ const io = socketIO(server, {
 });
 
 const users = {};
+
+// Use cors middleware
+app.use(cors());
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,12 +31,15 @@ io.on('connection', (socket) => {
   // if someone sends a message, broadcast it to other people
   socket.on('send', (message) => {
     socket.broadcast.emit('receive', { message: message, name: users[socket.id] });
+  });
 
-    // if someone leaves the chat, let others know
-    socket.on('disconnect', () => {
-      socket.broadcast.emit('left', users[socket.id]);
+  // if someone leaves the chat, let others know
+  socket.on('disconnect', () => {
+    const userName = users[socket.id];
+    if (userName) {
+      socket.broadcast.emit('left', userName);
       delete users[socket.id];
-    });
+    }
   });
 });
 
